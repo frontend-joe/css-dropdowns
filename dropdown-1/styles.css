@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px -1px rgba(57, 76, 96, 0.15);
+}
+
+.burger {
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown {
+  position: relative;
+  width: 200px;
+  height: 40px;
+}
+
+input,
+.search {
+  position: absolute;
+}
+
+input {
+  z-index: 2;
+  top: 2px;
+  height: 36px;
+  width: 198px;
+  border: 1px solid #dfe4e7;
+  outline: none;
+  padding-left: 34px;
+  border-radius: 4px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.search {
+  top: 13px;
+  left: 10px;
+  z-index: 3;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+input:focus {
+  border-color: transparent;
+}
+
+.menu {
+  z-index: 1;
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  transition-property: width;
+  transition-duration: 0.3s;
+}
+
+input:focus ~ .menu {
+  box-shadow: 0 0px 8px 0 rgba(57, 76, 96, 0.18);
+  height: 170px;
+  width: 290px;
+  padding-top: 40px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+input:focus ~ .menu .menu-content {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.menu-content {
+  position: absolute;
+  width: inherit;
+  visibility: hidden;
+  opacity: 0;
+  border-top: 1px solid #dfe4e7;
+}
+
+.menu button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 12px 10px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.menu button img {
+  width: 16px;
+  height: 16px;
+}
+
+.menu button:hover {
+  background: #f0f1f3;
+}
+
+span {
+  white-space: nowrap;
+}
+
+.menu button span:last-child {
+  opacity: 0;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.menu button:hover span:last-child {
+  opacity: 1;
+}
